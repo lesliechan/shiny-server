@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(\"ECG Simulation\"),\n\n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    wellPanel(\n            tags$style(type=\"text/css\", '#leftPanel { width:200px; float:left;}'),\n            id = \"leftPanel\",\n            sliderInput(\"rate\",\n                        \"Heart Rate\",\n                        min = 60,\n                        max = 120,\n                        value = 72),\n            img(src=\"ecgaxis.png\", width=160),\n            sliderInput(\"qaxis\",\n                        \"QRS axis (degrees)\",\n                        min=-90,\n                        max=270,\n                        value=60),\n            sliderInput(\"paxis\",\n                        \"P axis (degrees)\",\n                        min=-90,\n                        max=270,\n                        value=60),\n            sliderInput(\"taxis\",\n                        \"T axis (degrees)\",\n                        min=-90,\n                        max=270,\n                        value=60),\n            \n            checkboxInput(\"show_p\", \"Show P Wave\", value=TRUE),\n            checkboxInput(\"show_q\", \"Show QRS Wave\", value=TRUE),\n            checkboxInput(\"show_t\", \"Show T Wave\", value=TRUE),\n            checkboxInput(\"show_u\", \"Show U Wave\", value=TRUE)\n    ),\n\n    # Show a plot of the generated distribution\n    mainPanel(\n            tabsetPanel(\n            tabPanel(\"12-Leads\", plotOutput(\"display12leads\")),\n            tabPanel(\"I\", plotOutput(\"display_lead_I\")),\n            tabPanel(\"II\", plotOutput(\"display_lead_II\")),\n            tabPanel(\"III\", plotOutput(\"display_lead_III\")),\n            tabPanel(\"aVR\", plotOutput(\"display_lead_aVR\")),\n            tabPanel(\"aVL\", plotOutput(\"display_lead_aVL\")),\n            tabPanel(\"aVF\", plotOutput(\"display_lead_aVF\")),\n            tabPanel(\"V1\", plotOutput(\"display_lead_V1\")),\n            tabPanel(\"V2\", plotOutput(\"display_lead_V2\")),\n            tabPanel(\"V3\", plotOutput(\"display_lead_V3\")),\n            tabPanel(\"V4\", plotOutput(\"display_lead_V4\")),\n            tabPanel(\"V5\", plotOutput(\"display_lead_V5\")),\n            tabPanel(\"V6\", plotOutput(\"display_lead_V6\"))\n##            ,tabPanel(\"DEBUG\", textOutput(\"display_debug\"))\n            )\n    )\n  )\n))\n",
+    "created" : 1455163336292.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "274579429",
+    "id" : "7A7137AF",
+    "lastKnownWriteTime" : 1455361844,
+    "path" : "~/Documents/Rsandbox/ECGMTE2016/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
